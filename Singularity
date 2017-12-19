@@ -8,6 +8,9 @@ From: centos:6
 #From: cern:slc6-base
 #From: ringo:scientific:6.5
 
+%help
+This container is a CentOS 6 with a number of sys admin tools for performance troubleshooting use.
+
 %runscript
 	echo "zsh from inside the container..."
 	/bin/zsh
@@ -41,8 +44,10 @@ From: centos:6
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
 
+%labels
+MAINTAINER  Tin Ho tin'at'lbl.gov
 
-## ref singhub/sl6_lbl.def
-## sudo    /opt/singularity-2.4.2/bin/singularity build -w ./sl6_lbl.simg ./sl6_lbl.def
+
 ## sudo    /opt/singularity-2.4.2/bin/singularity build -w ./perf_tools.simg ./Singularity
+## sudo    /opt/singularity-2.4.2/bin/singularity build -w ./sl6_lbl.simg ./sl6_lbl.def
 
