@@ -17,13 +17,14 @@ This container is a CentOS 6 with a number of sys admin tools for performance tr
 
 
 %post
-	echo "Hello from inside the container"
+	#echo "Hello from inside the container"
+	touch /THIS_IS_INSIDE_SINGULARITY
 	yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 			environment-modules \
-			#libpng libpng-devel libpng-static \
-			#openmotif openmotif-devl openmotif22 \
 			ipmitool \
 			epel-release  # sl6 may need diff mech to enable epel
+			#libpng libpng-devel libpng-static \
+			#openmotif openmotif-devl openmotif22 \
 
 
 	# performance tools, many are from epel
@@ -37,9 +38,6 @@ This container is a CentOS 6 with a number of sys admin tools for performance tr
 			# systsat includes: sar iostat mpstat 
 			# net-tools: mii-tool  
 			# iputils: tracepath \
-			
-
-	touch /THIS_IS_INSIDE_SINGULARITY
 
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
