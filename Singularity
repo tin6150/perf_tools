@@ -22,11 +22,13 @@ From: centos:6
 	yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 			environment-modules \
 			ipmitool \
-			strace openssh-clients \
+			strace openssh-clients numactl-libs \
 			pciutils \
 			epel-release  # sl6 may need diff mech to enable epel
 			#libpng libpng-devel libpng-static \
 			#openmotif openmotif-devl openmotif22 \
+			# numactl-libs provides  /usr/lib64/libnuma.so.1 needed by mpi_nxnlatbw
+
 
 
 	# performance tools, many are from epel
