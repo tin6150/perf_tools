@@ -37,7 +37,7 @@ From: centos:6
 			htop ntop \
 			powertop \
 			strace \
-			openssh-clients numactl torque-libs opensm-libs
+			openssh-clients numactl torque-libs opensm-libs librdmacm
 			#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
 
 			# powertop     # does not seems to work
