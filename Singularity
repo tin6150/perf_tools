@@ -36,14 +36,14 @@ From: centos:6
 			nmap nuttcp iptraf iptraf-ng \
 			htop ntop \
 			powertop \
-			strace openssh-clients numactl
+			strace \
+			openssh-clients numactl torque-libs opensm-libs
+			#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
 
 			# powertop     # does not seems to work
-
 			# systsat includes: sar iostat mpstat 
 			# net-tools: mii-tool  
 			# iputils: tracepath \
-			# numactl-libs provides  /usr/lib64/libnuma.so.1 needed by mpi_nxnlatbw
 
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
