@@ -22,12 +22,10 @@ From: centos:6
 	yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 			environment-modules \
 			ipmitool \
-			strace openssh-clients numactl-libs \
 			pciutils \
 			epel-release  # sl6 may need diff mech to enable epel
 			#libpng libpng-devel libpng-static \
 			#openmotif openmotif-devl openmotif22 \
-			# numactl-libs provides  /usr/lib64/libnuma.so.1 needed by mpi_nxnlatbw
 
 
 
@@ -37,11 +35,15 @@ From: centos:6
 			ethtool iftop telnet \
 			nmap nuttcp iptraf iptraf-ng \
 			htop ntop \
-			powertop     # does not seems to work
+			powertop \
+			strace openssh-clients numactl
+
+			# powertop     # does not seems to work
 
 			# systsat includes: sar iostat mpstat 
 			# net-tools: mii-tool  
 			# iputils: tracepath \
+			# numactl-libs provides  /usr/lib64/libnuma.so.1 needed by mpi_nxnlatbw
 
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
