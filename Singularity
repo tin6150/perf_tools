@@ -9,7 +9,7 @@ From: centos:6
 #From: ringo:scientific:6.5
 
 %help
-This container is a CentOS 6 with a number of sys admin tools for performance troubleshooting use.
+	This container is a CentOS 6 with a number of sys admin tools for performance troubleshooting use.
 
 %runscript
 	echo "zsh from inside the container..."
@@ -22,6 +22,7 @@ This container is a CentOS 6 with a number of sys admin tools for performance tr
 	yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 			environment-modules \
 			ipmitool \
+			strace openssh \
 			pciutils \
 			epel-release  # sl6 may need diff mech to enable epel
 			#libpng libpng-devel libpng-static \
