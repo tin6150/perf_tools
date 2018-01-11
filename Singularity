@@ -22,7 +22,7 @@ From: centos:6
 	yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 			environment-modules \
 			ipmitool \
-			strace openssh \
+			strace openssh-clients \
 			pciutils \
 			epel-release  # sl6 may need diff mech to enable epel
 			#libpng libpng-devel libpng-static \
