@@ -23,9 +23,11 @@ From: centos:6
 			environment-modules \
 			ipmitool \
 			pciutils \
+			smartmontools \
 			epel-release  # sl6 may need diff mech to enable epel
 			#libpng libpng-devel libpng-static \
 			#openmotif openmotif-devl openmotif22 \
+			# smartmontools provides smartctl to check hd status
 
 
 
