@@ -4,12 +4,13 @@
 
 
 BootStrap: docker
-From: centos:6
+From: centos:7.6.1810
+#From: centos:6
 #From: cern:slc6-base
 #From: ringo:scientific:6.5
 
 %help
-	This container is a CentOS 6 with a number of sys admin tools for performance troubleshooting use.
+	This container is a CentOS 7 with a number of sys admin tools for performance troubleshooting use.
 
 %runscript
 	echo "zsh from inside the container..."
@@ -19,6 +20,7 @@ From: centos:6
 %post
 	#echo "Hello from inside the container"
 	touch /THIS_IS_INSIDE_SINGULARITY
+	yum -ty update 
 	yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 			environment-modules \
 			ipmitool \
@@ -39,7 +41,8 @@ From: centos:6
 			htop ntop \
 			powertop \
 			strace \
-			openssh-clients numactl torque-libs opensm-libs librdmacm
+			openssh-clients numactl torque-libs opensm-libs librdmacm \
+			kernel-tools
 			#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
 
 			# powertop     # does not seems to work

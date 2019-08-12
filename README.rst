@@ -8,7 +8,8 @@ To run::
 	singularity pull shub://tin6150/perf_tools
 	./tin6150-perf_tools-latest.simg
 
-Container is based on CentOS 6
+
+Container is based on CentOS 7 (in the centos7 branch)
 
 Ref: 
 
@@ -22,7 +23,7 @@ Dev/Build instructions
 
 .. code:: bash
 
-	SING_VER=2.4.1
+	SING_VER=2.6
 	module load container/singularity/${SING_VER}
 	Singularity=$( which singularity )
 	sudo    $Singularity build -w perf_tools.simg ./Singularity
