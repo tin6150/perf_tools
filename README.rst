@@ -31,3 +31,5 @@ Dev/Build instructions
 	sudo    $Singularity build --sandbox ./sandbox ./Singularity
 
 
+
+.. #vim: paste
