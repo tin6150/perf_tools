@@ -29,10 +29,14 @@ Dev/Build instructions
 
 .. code:: bash
 
-	SING_VER=2.6
+	SING_VER=2.6.1
 	module load container/singularity/${SING_VER}
 	Singularity=$( which singularity )
-	sudo    $Singularity build -w perf_tools.simg ./Singularity
+	sudo    $Singularity build --writable perf_tools7.simg ./Singularity 2>&1 | tee singularity_build.log
+ 
+
+
+	sudo    $Singularity build -w perf_tools7.simg ./Singularity
 	-or-
 	mkdir ./sandbox
 	sudo    $Singularity build --sandbox ./sandbox ./Singularity

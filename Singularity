@@ -1,10 +1,18 @@
 
 # Singularity container definition 
-# Also contain a set of performance tools
+# contain performance tools
+# and number of sys admin tools, maybe trivial but not avail on a cluster node
+# https://github.com/tin6150/perf_tools
+# https://singularity-hub.org/collections/377
+# singularity pull shub://tin6150/perf_tools
+# ./tin6150-perf_tools-master-latest.simg 
+# to get zsh from inside the container and interactively run the available tools
+# singularity 2.6 image are executable by singularity 3.2
 
 
 BootStrap: docker
-From: centos:7.6.1810
+#From: centos:7.6.1810
+From: centos:7
 #From: centos:6
 #From: cern:slc6-base
 #From: ringo:scientific:6.5
@@ -41,11 +49,12 @@ From: centos:7.6.1810
 			htop ntop \
 			powertop \
 			strace \
+			stress stress-ng p7zip p7zip-doc sysbench \
 			openssh-clients numactl torque-libs opensm-libs librdmacm \
 			kernel-tools
 			#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
 
-			# powertop     # does not seems to work
+			# powertop     # does not always work
 			# systsat includes: sar iostat mpstat 
 			# net-tools: mii-tool  
 			# iputils: tracepath \
