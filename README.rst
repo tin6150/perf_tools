@@ -4,7 +4,7 @@
 [.md, need to convert to .rst]
 
 
-Performance and SysAdmin tool collection (CentOS 6)
+Performance and SysAdmin tool collection (CentOS 7)
 ***************************************************
 
 singularity container with a collection of performance tools such as iperf3, perf, htop, etc.
@@ -22,6 +22,19 @@ Ref:
 - https://www.singularity-hub.org/collections/...
 - https://github.com/tin6150/perf_tools
 
+
+Example usage
+-------------
+
+	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif htop
+
+	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress  --io 6 --hdd 2  --vm  64 -t 120
+
+
+	cd /local/scratch/tin/tmp
+	T=1800; singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress-ng --all 1 --backoff 15 --timeout ${T}  --metrics-brief
+	T=1800; singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress-ng --cpu 63 --backoff 15 --timeout ${T}  --tz --log-brief
+	rm tmp-stress-ng-*
 
 ~~~~
 
