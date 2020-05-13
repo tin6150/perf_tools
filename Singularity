@@ -73,7 +73,7 @@ From: centos:7
 			colordiff \
 			wdiff \
 			meld \
-			python36-pip.noarch
+			python36-pip
 
 	pip install icdiff
 
