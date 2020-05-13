@@ -59,6 +59,24 @@ From: centos:7
 			# net-tools: mii-tool  
 			# iputils: tracepath \
 
+  # https://snapcraft.io/install/icdiff/rhel
+	# install icdiff via snap, avail from rhel 7.6 onward
+	# but snap overlay fs may not work inside singularity
+	#rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  #yum --enablerepo=
+
+
+  # adding some difftool, see psg/linux.html#difftools 
+	# wdiff is gnu word diff
+	# meld is gui tool
+	yum -ty install \
+			colordiff \
+			wdiff \
+			meld \
+			python36-pip.noarch
+
+	pip install icdiff
+
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
 
