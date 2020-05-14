@@ -75,7 +75,8 @@ From: centos:7
 			meld \
 			python36-pip
 
-	pip install icdiff
+	#pip --help
+	pip install --quiet --no-color icdiff
 
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
