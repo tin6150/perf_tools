@@ -26,6 +26,8 @@ Ref:
 Example usage
 -------------
 
+	./perf_tools7.simg # get dropped into zsh inside the container
+
 	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif htop
 
 	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress  --io 6 --hdd 2  --vm  64 -t 120
@@ -36,23 +38,31 @@ Example usage
 	T=1800; singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress-ng --cpu 63 --backoff 15 --timeout ${T}  --tz --log-brief
 	rm tmp-stress-ng-*
 
+	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress -m 4 # 4 cpu/memory channel test, no need for clean up
+
 ~~~~
 
 Dev/Build instructions 
 
 .. code:: bash
 
+	# Singularity Hub 3.2 build with CentOS 7 base worked well as well.
+
+	# older 2.4 based build cmd ::
+	sudo    /opt/singularity-2.4.2/bin/singularity build -w ./perf_tools.simg ./Singularity
+	sudo    /opt/singularity-2.4.2/bin/singularity build -w ./sl6_lbl.simg ./sl6_lbl.def
+
+	# 2.6 from local modules ::
 	SING_VER=2.6.1
 	module load container/singularity/${SING_VER}
 	Singularity=$( which singularity )
 	sudo    $Singularity build --writable perf_tools7.simg ./Singularity 2>&1 | tee singularity_build.log
- 
-
 
 	sudo    $Singularity build -w perf_tools7.simg ./Singularity
 	-or-
 	mkdir ./sandbox
 	sudo    $Singularity build --sandbox ./sandbox ./Singularity
+
 
 
 
