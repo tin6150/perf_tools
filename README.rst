@@ -19,7 +19,7 @@ Container is based on CentOS 7 (in the centos7 branch)
 
 Ref: 
 
-- https://www.singularity-hub.org/collections/...
+- https://www.singularity-hub.org/collections/377
 - https://github.com/tin6150/perf_tools
 
 

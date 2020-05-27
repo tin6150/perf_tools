@@ -18,7 +18,12 @@ From: centos:7
 #From: ringo:scientific:6.5
 
 %help
-	This container is a CentOS 7 with a number of sys admin tools for performance troubleshooting use.
+	This container is a CentOS 7 with a number of sys admin tools for performance troubleshooting use,
+	especially for smal stateless VNFS image of an hpc node.
+	It defaults to a zsh inside the container and have things like iperf3, sysstat, stress, p7zip, etc.
+  download: singularity pull shub://tin6150/perf_tools
+  ref 1: https://github.com/tin6150/perf_tools
+  ref 2: https://singularity-hub.org/collections/377
 
 %runscript
 	echo "zsh from inside the container..."
@@ -73,10 +78,11 @@ From: centos:7
 			colordiff \
 			wdiff \
 			meld \
-			python36-pip
+			python36-pip 
 
+	which pip 
 	#pip --help
-	pip install --quiet --no-color icdiff
+	#pip install --quiet --no-color icdiff
 
 	echo "end"                  >> /THIS_IS_INSIDE_SINGULARITY
 	date                        >> /THIS_IS_INSIDE_SINGULARITY
@@ -84,6 +90,7 @@ From: centos:7
 %labels
 MAINTAINER  Tin Ho tin'at'lbl.gov
 
+## example build
 
 ## sudo    /opt/singularity-2.4.2/bin/singularity build -w ./perf_tools.simg ./Singularity
 ## sudo    /opt/singularity-2.4.2/bin/singularity build -w ./sl6_lbl.simg ./sl6_lbl.def
