@@ -80,7 +80,7 @@ From: centos:7
 			meld \
 			python36-pip 
 
-	which pip 
+	#which pip 
 	#pip --help
 	#pip install --quiet --no-color icdiff
 
