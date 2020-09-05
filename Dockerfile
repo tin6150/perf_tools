@@ -13,16 +13,16 @@ ARG TZ="America/Los_Angeles"
 
 COPY . /perf_tools
 
-RUN touch    _TOP_DIR_OF_CONTAINER_  ;\
-    echo "====================================== " | tee -a _TOP_DIR_OF_CONTAINER_  ;\
-    echo "Begin Dockerfile build process at " | tee -a _TOP_DIR_OF_CONTAINER_  ;\
-    echo "====================================== " | tee -a _TOP_DIR_OF_CONTAINER_  ;\
-    hostname | tee -a       _TOP_DIR_OF_CONTAINER_        ;\
-    date     | tee -a       _TOP_DIR_OF_CONTAINER_        ;\
-	  touch /THIS_IS_INSIDE_DOCKER_CONTAINER                  ;\
-    bash /perf_tools/install_tools.sh        | tee -a install_tools.log ;\
-    echo $? > install_tools.exit.code ;\
-    cd      /  ;\
+RUN touch    _TOP_DIR_OF_CONTAINER_                                                   ;\
+    echo "====================================== " | tee -a _TOP_DIR_OF_CONTAINER_    ;\
+    echo "Begin Dockerfile build process at " | tee -a _TOP_DIR_OF_CONTAINER_         ;\
+    echo "====================================== " | tee -a _TOP_DIR_OF_CONTAINER_    ;\
+    hostname | tee -a       _TOP_DIR_OF_CONTAINER_                                    ;\
+    date     | tee -a       _TOP_DIR_OF_CONTAINER_                                    ;\
+    touch /THIS_IS_INSIDE_DOCKER_CONTAINER                                            ;\
+    bash /perf_tools/install_tools.sh        | tee -a install_tools.log               ;\
+    echo $? > install_tools.exit.code                                                 ;\
+    cd      / 
 
 RUN     cd / \
   && touch _TOP_DIR_OF_CONTAINER_  \

@@ -25,11 +25,12 @@ yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 # performance tools, many are from epel
 yum -ty install \
 		iperf3 iperf3 perf sysstat \
-		ethtool iftop telnet \
+		ethtool iftop \
 		nmap nuttcp iptraf iptraf-ng \
 		htop ntop \
 		powertop \
 		strace \
+		telnet net-tools bind-utils \
 		stress stress-ng p7zip p7zip-doc sysbench \
 		openssh-clients numactl torque-libs opensm-libs librdmacm \
 		spectre-meltdown-checker \

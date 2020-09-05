@@ -81,4 +81,8 @@ Docker version
 
 
 
+build/test docker container
+---------------------------
+
+        podman build .
 .. #vim: paste
