@@ -26,7 +26,7 @@ yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 yum -ty install \
 		iperf3 iperf3 perf sysstat \
 		ethtool iftop \
-		nmap nuttcp iptraf iptraf-ng \
+		nmap nmap-nat nuttcp iptraf iptraf-ng \
 		htop ntop \
 		powertop \
 		strace \
@@ -34,12 +34,15 @@ yum -ty install \
 		stress stress-ng p7zip p7zip-doc sysbench \
 		openssh-clients numactl torque-libs opensm-libs librdmacm \
 		spectre-meltdown-checker \
+		iputils sysstat \
+		powertop  \
 		kernel-tools 
 		#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
 
 		# powertop     # does not always work
 		# systsat includes: sar iostat mpstat 
-		# net-tools: mii-tool  
+		# net-tools: mii-tool netstat 
+		# nmap-ncat: nc
 		# iputils: tracepath \
 
 
