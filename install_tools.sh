@@ -29,14 +29,15 @@ yum -ty install \
 		nmap nmap-nat nuttcp iptraf iptraf-ng \
 		htop ntop \
 		powertop \
+		kernel-tools  \
 		strace \
 		telnet net-tools bind-utils \
 		stress stress-ng p7zip p7zip-doc sysbench \
 		openssh-clients numactl torque-libs opensm-libs librdmacm \
 		spectre-meltdown-checker \
 		iputils sysstat \
-		powertop  \
-		kernel-tools 
+		traceroute
+
 		#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
 
 		# powertop     # does not always work
