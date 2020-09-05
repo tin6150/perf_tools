@@ -37,6 +37,7 @@ yum -ty install \
 		spectre-meltdown-checker \
 		iputils sysstat \
 		tcpdump wireshark \
+		mailx alpine postfix \
 		tftp tftp-server \
 		traceroute
 
