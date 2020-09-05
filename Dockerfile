@@ -27,7 +27,7 @@ RUN touch    _TOP_DIR_OF_CONTAINER_                                             
 RUN     cd / \
   && touch _TOP_DIR_OF_CONTAINER_  \
   && TZ=PST8PDT date  >> _TOP_DIR_OF_CONTAINER_  \
-  && echo  "Dockerfile. 2020.0914.1147 traceroute"  >> _TOP_DIR_OF_CONTAINER_   \
+  && echo  "Dockerfile. 2020.0914.1222 traceroute"  >> _TOP_DIR_OF_CONTAINER_   \
   && echo  "Grand Finale"
 
 # ENV TZ America/Los_Angeles  

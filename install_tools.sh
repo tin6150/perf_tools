@@ -36,6 +36,8 @@ yum -ty install \
 		openssh-clients numactl torque-libs opensm-libs librdmacm \
 		spectre-meltdown-checker \
 		iputils sysstat \
+		tcpdump wireshark \
+		tftp tftp-server \
 		traceroute
 
 		#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
