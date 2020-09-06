@@ -12,13 +12,15 @@ echo "start"    | tee -a /_install_tool_sh_
 yum -ty update 
 yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 		environment-modules \
-		ipmitool \
+		bash tcsh ksh zsh fish \
+		ipmitool redfish \
 		pciutils \
 		smartmontools \
 		epel-release  # sl6 may need diff mech to enable epel
 		#libpng libpng-devel libpng-static \
 		#openmotif openmotif-devl openmotif22 \
 		# smartmontools provides smartctl to check hd status
+		# fish shell avail for 7.8 
 
 
 
@@ -42,6 +44,7 @@ yum -ty install \
 		traceroute
 
 		#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
+
 
 		# powertop     # does not always work
 		# systsat includes: sar iostat mpstat 
