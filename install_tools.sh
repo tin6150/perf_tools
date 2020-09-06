@@ -12,8 +12,6 @@ echo "start"    | tee -a /_install_tool_sh_
 yum -ty update 
 yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 		environment-modules \
-		bash tcsh ksh zsh fish \
-		ipmitool redfish \
 		pciutils \
 		smartmontools \
 		epel-release  # sl6 may need diff mech to enable epel
@@ -41,6 +39,9 @@ yum -ty install \
 		tcpdump wireshark \
 		mailx alpine postfix \
 		tftp tftp-server \
+		tcsh ksh zsh fish \
+		ncurses tmux screen \
+		ipmitool redfish \
 		traceroute
 
 		#openssh-clients numactl libtorque opensm-libs  are needed by Y's staging test
@@ -60,6 +61,7 @@ yum -ty install \
 		colordiff \
 		wdiff \
 		meld \
+		xterm  \
 		git  \
 		python36-pip python-pip
 
