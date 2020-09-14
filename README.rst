@@ -64,6 +64,21 @@ Dev/Build instructions
 	sudo    $Singularity build --sandbox ./sandbox ./Singularity
 
 
+~~~~
+
+Docker version
+==============
+
+	docker run -it tin6150/perf_tools bash
+
+	maybe it would work with podman, untested
+
+	This docker container is more or less same idea as the singularity container, 
+	but contents are not the same (at first).
+	And it is to troubleshoot docker host and its routing problem, 
+	but perhaps as template to host tmp code to troubleshoot other issue with running things inside docker
+	It is essentially a fat container with lots of tools installed, such as traceroute, nslookup, dig, nc, telnet, etc.
+
 
 
 .. #vim: paste
