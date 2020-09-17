@@ -1,20 +1,23 @@
 version: '3'
 
 services:
-  gitlab:
-          ##image: 'registry:443/gitlab/gitlab-ce'
+  fatboy9:
     image: 'tin6150/perf_tools'
+    ##image: 'registry:443/gitlab/gitlab-ce'
     container_name: fatboy9
+    stdin_open: true # docker run -i 
+    tty: true
+    #user: tin
     #user: gitlab
-    restart: always
+    #restart: always
     ##hostname: 'greyhound.lbl.gov'
     ports:
-      - '128.3.32.87:9080:80'
-      - '128.3.32.87:9443:443'
-      - '128.3.32.87:9022:22'
-      - '10.22.22.4:9080:80'
-      - '10.22.22.4:9443:443'
-      - '10.22.22.4:9022:22'
+      - '128.3.35.74:9080:80'
+      - '128.3.35.74:9443:443'
+      - '128.3.35.74:9022:22'
+      - '10.22.22.8:9080:80'
+      - '10.22.22.8:9443:443'
+      - '10.22.22.8:9022:22'
     networks: 
       default:
         aliases:
