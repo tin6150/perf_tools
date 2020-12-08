@@ -36,6 +36,16 @@ Example usage
 	T=1800; singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress-ng --cpu 63 --backoff 15 --timeout ${T}  --tz --log-brief
 	rm tmp-stress-ng-*
 
+
+	# tbd memory test
+	# need yum install memtester
+	# determine free memory from "free -h"
+	# run as root, it need to lock memory
+	# last digit is # of loops, if ommited, will loop forever
+	memtester 4K     10 # quick test to try tool
+	memtester 31500M 1  # thorough test on a 32 GB machine
+
+
 ~~~~
 
 Dev/Build instructions 
