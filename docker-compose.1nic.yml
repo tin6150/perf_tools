@@ -1,0 +1,20 @@
+# compose file to test varioud network config w/o writting long cli options
+# run as: docker-compose up -d
+# then: docker exec -it fat-bridge bash 
+# if clean u needed, run: docker rm fat-bridge
+version: '3'
+services:
+  fat-bridge:
+    image: 'tin6150/perf_tools'
+    container_name: fat-bridge
+    stdin_open: true # docker run -i
+    tty: true 
+    #user: gitlab
+    #hostname: 'greyhound.lbl.gov'
+    networks: 
+      default:
+        aliases:
+          - 'gitlab'
+networks:
+  default:
+    driver: 'bridge'

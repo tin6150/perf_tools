@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  fatboy9:
+    image: 'tin6150/perf_tools'
+    ##image: 'registry:443/gitlab/gitlab-ce'
+    container_name: fatboy9
+    stdin_open: true # docker run -i 
+    tty: true
+    #user: tin
+    #user: gitlab
+    #restart: always
+    ##hostname: 'greyhound.lbl.gov'
+    ports:
+      - '128.3.35.74:9080:80'
+      - '128.3.35.74:9443:443'
+      - '128.3.35.74:9022:22'
+      - '10.22.22.8:9080:80'
+      - '10.22.22.8:9443:443'
+      - '10.22.22.8:9022:22'
+    networks: 
+      default:
+        aliases:
+          - 'fatboy9'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://greyhound.lbl.gov'
+        letsencrypt['enable'] = false 
+        nginx['enable'] = true
+        nginx['redirect_http_to_https'] = true
+        nginx['ssl_certificate'] = "/etc/gitlab/ssl/greyhound_lbl_gov_cert.cer"
+        nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/greyhound_lbl_gov.key"
+        #nginx['ssl_certificate'] = "/etc/gitlab/ssl/#{node['fqdn']}.crt"
+        #nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/#{node['fqdn']}.key"
+        gitlab_rails['backup_upload_connection'] = {
+                'provider' => 'Local',
+                'local_root' => '/mnt/backup'
+        }
+        gitlab_rails['backup_upload_remote_directory'] = '.'
+        gitlab_rails['backup_keep_time'] = 4838400
+        gitlab_rails['smtp_enable'] = true 
+        gitlab_rails['smtp_address'] = "10.22.22.2"
+        gitlab_rails['smtp_port'] = 25 
+networks:
+  default:
+    driver: 'bridge'
