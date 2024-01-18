@@ -12,8 +12,10 @@ singularity container with a collection of performance tools such as iperf3, per
 
 To run::
 
-	singularity pull shub://tin6150/perf_tools
-	./tin6150-perf_tools-latest.simg
+	singularity pull --name tin6150_perf_tools_latest.sif docker://ghcr.io/tin6150/perf_tools:master
+	./tin6150_perf_tools_latest.sif 
+	singularity exec ./tin6150_perf_tools_latest.sif /bin/smem
+
 
 
 Container is based on CentOS 7 (in the centos7 branch)
@@ -29,9 +31,9 @@ Example usage
 
 	./perf_tools7.simg # get dropped into zsh inside the container
 
-	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif htop
+	singularity exec /global/scratch/users/tin/singularity-repo/perf_tools_latest.sif htop
 
-	singularity exec /global/scratch/tin/singularity-repo/perf_tools_latest.sif stress  --io 6 --hdd 2  --vm  64 -t 120
+	singularity exec /global/scratch/users/tin/singularity-repo/perf_tools_latest.sif stress  --io 6 --hdd 2  --vm  64 -t 120
 
 
 	cd /local/scratch/tin/tmp
