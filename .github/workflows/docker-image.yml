@@ -1,3 +1,7 @@
+## 2021-1018 don't think need this, 
+## workflow docker-publish.yml should build and push to ghcr.io
+## which could be done via schedule or push to branch, so that one is preferred over this one.
+
 name: Docker Image CI
 
 on:
@@ -15,4 +19,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag perf_tools:$(date +%s)
