@@ -63,6 +63,7 @@ yum -ty install \
 		meld \
 		xterm  \
 		git  \
+		smem  \
 		python36-pip python-pip
 
 #which pip  # this throws an error and abort singularity hub build.  where was 

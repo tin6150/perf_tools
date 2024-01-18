@@ -79,6 +79,7 @@ From: centos:7
 			colordiff \
 			wdiff \
 			meld \
+			smem \
 			python36-pip python-pip
 
 	#which pip  # this throws an error and abort singularity hub build.  where was 
