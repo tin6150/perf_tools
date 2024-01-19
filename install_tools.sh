@@ -64,6 +64,7 @@ yum -ty install \
 		xterm  \
 		git  \
 		smem  \
+		matplotlib  \
 		python36-pip python-pip
 
 #which pip  # this throws an error and abort singularity hub build.  where was 
