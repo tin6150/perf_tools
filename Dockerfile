@@ -6,7 +6,7 @@
 
 #FROM r-base:3.6.2
 #FROM tin6150/base4metabolic
-FROM rocky:9
+FROM rockylinux:9.3
 MAINTAINER Tin (at) LBL.gov
 
 ARG TZ="America/Los_Angeles"
