@@ -64,8 +64,11 @@ yum -ty install \
 		xterm  \
 		git  \
 		smem  \
+		mousepad  \
 		matplotlib  \
 		python36-pip python-pip
+
+# mousepad is a xfce editor, expect lightweight, check how much space it add to this perf_tools container 2024.0312
 
 #which pip  # this throws an error and abort singularity hub build.  where was 
 #pip --help
