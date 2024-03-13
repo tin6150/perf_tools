@@ -4,6 +4,18 @@
 
 .. # [.md, need to convert to .rst]
 
+Performance and SysAdmin tool collection (RockyLinux 9)
+*******************************************************
+
+early seeding, container built, but likely much of the tools installed by the .sh didn't work, maybe failed early.
+fix tbd.
+2024.0312
+
+To run::
+
+    docker run -it --rm  --entrypoint=/bin/bash ghcr.io/tin6150/perf_tools:rocky9
+
+
 
 Performance and SysAdmin tool collection (CentOS 7)
 ***************************************************

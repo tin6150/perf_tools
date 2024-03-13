@@ -9,8 +9,10 @@
 date            | tee    /_install_tool_sh_
 echo "start"    | tee -a /_install_tool_sh_
 
-yum -ty update 
-yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
+# rocky 9/dnf does not have a -t option
+
+yum -y update 
+yum -y install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 		environment-modules \
 		pciutils \
 		smartmontools \
@@ -23,7 +25,7 @@ yum -ty install vim bash zsh wget curl tar coreutils which util-linux-ng man \
 
 
 # performance tools, many are from epel
-yum -ty install \
+yum -y install \
 		iperf3 iperf3 perf sysstat \
 		ethtool iftop \
 		nmap nmap-nat nuttcp iptraf iptraf-ng \
@@ -57,7 +59,7 @@ yum -ty install \
 # adding some difftool, see psg/linux.html#difftools 
 # wdiff is gnu word diff
 # meld is gui tool
-yum -ty install \
+yum -y install \
 		colordiff \
 		wdiff \
 		meld \
