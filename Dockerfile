@@ -6,7 +6,7 @@
 
 #FROM r-base:3.6.2
 #FROM tin6150/base4metabolic
-FROM centos:7
+FROM rocky:9
 MAINTAINER Tin (at) LBL.gov
 
 ARG TZ="America/Los_Angeles"
@@ -27,16 +27,14 @@ RUN touch    _TOP_DIR_OF_CONTAINER_                                             
 RUN     cd / \
   && touch _TOP_DIR_OF_CONTAINER_  \
   && TZ=PST8PDT date  >> _TOP_DIR_OF_CONTAINER_  \
-  && echo  "Dockerfile. 2020.0915.1107 ncurses"  >> _TOP_DIR_OF_CONTAINER_   \
-  && echo  "Dockerfile. 2024.0118.1510 smem"     >> _TOP_DIR_OF_CONTAINER_   \
-  && echo  "Dockerfile. 2024.0312          "     >> _TOP_DIR_OF_CONTAINER_   \
+  && echo  "Dockerfile. 2024.0312 rocky 9  "     >> _TOP_DIR_OF_CONTAINER_   \
   && echo  "Grand Finale"
 
 # ENV TZ America/Los_Angeles  
 # ENV TZ could be changed/overwritten by container's /etc/csh.cshrc
 ENV TEST_DOCKER_ENV_1   Can_use_ADD_to_make_ENV_avail_in_build_process
 ENV TEST_DOCKER_ENV_REF https://vsupalov.com/docker-arg-env-variable-guide/#setting-env-values
-ENV DOCKER_perf_tools "fat container"
+ENV DOCKER_perf_tools "fat container rocky 9"
 
 ###ENTRYPOINT [ "/usr/bin/zsh" ]
 ENTRYPOINT [ "/usr/bin/bash", "-l", "-i" ]

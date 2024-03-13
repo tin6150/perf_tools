@@ -12,12 +12,12 @@ on:
   #  - cron: '38 7 * * *'
   push:
     ##branches: [ main ]
-    branches: [ master, main, integration, base, sfb* ]
+    branches: [ master, main, rocky9, base, sfb* ]
     # Publish semver tags as releases.
-    tags: [ 'v*.*.*', 'base*', 'sfb*' ]
+    tags: [ 'v*.*.*', 'base*', 'rocky9*' ]
   pull_request:
     ##branches: [ main ]
-    branches: [ master, main, integration, base, sfb* ]
+    branches: [ master, main, rocky9, base, sfb* ]
 
 
 env:
