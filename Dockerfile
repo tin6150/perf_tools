@@ -34,7 +34,7 @@ RUN touch    _TOP_DIR_OF_CONTAINER_                                             
 RUN     cd / \
   && touch _TOP_DIR_OF_CONTAINER_  \
   && TZ=PST8PDT date  >> _TOP_DIR_OF_CONTAINER_  \
-  && echo  "Dockerfile. 2024.0312 rocky 9  "     >> _TOP_DIR_OF_CONTAINER_   \
+  && echo  "Dockerfile. 2024.0315 rocky 9  "     >> _TOP_DIR_OF_CONTAINER_   \
   && echo  "Grand Finale"
 
 # ENV TZ America/Los_Angeles  
