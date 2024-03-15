@@ -18,6 +18,6 @@ sudo -u tin docker pull                        registry.greta.local:443/tin/perf
 
 
 docker run -it --rm  --entrypoint=/bin/bash registry.greta.local:443/tin/perf_tools:rocky9
-docker run -it --rm  --entrypoint=/bin/htop  registry.greta.local:443/tin/perf_tools:rocky9
+docker run -it --rm  --entrypoint=/bin/htop  registry.greta.local:443/tin/perf_tools:rocky9   # htop only see inside container :/
 
 
