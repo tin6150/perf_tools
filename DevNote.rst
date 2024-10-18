@@ -21,3 +21,6 @@ docker run -it --rm  --entrypoint=/bin/bash registry.greta.local:443/tin/perf_to
 docker run -it --rm  --entrypoint=/bin/htop  registry.greta.local:443/tin/perf_tools:rocky9   # htop only see inside container :/
 
 
+##// so, somehow also started satoolbag, and that repo has lots of overlap with this one.
+##// performance benchmarking need lots of tools to check for things... maybe should just merge into 1...
+##// for now, satoolbag is Rocky 8 based, whereas perf_tools is CentOS 7 and Rocky 9

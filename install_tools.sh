@@ -12,7 +12,9 @@ echo "start"    | tee -a /_install_tool_sh_
 # rocky 9/dnf does not have a -t option
 
 yum -y update 
-yum -y install vim bash zsh wget curl tar coreutils which util-linux-ng man \
+yum -y install  wget 
+yum -y install  --allowerasing curl 
+yum -y install vim bash zsh tar coreutils which util-linux-ng man \
 		environment-modules \
 		pciutils \
 		smartmontools \
